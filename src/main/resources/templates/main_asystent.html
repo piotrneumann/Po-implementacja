@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Strona główna</title>
+
+
+    <link rel="stylesheet" th:href="@{/style.css}" href="../../style.css" />
+</head>
+<body>
+
+<div class="logo_top">
+</div>
+<div class="loggedAs">
+
+</div>
+<div class="menu_navigator_student">
+    <nav>
+        <ul>
+            <li class="home"><a class="active" href="main_student">Strona główna</a></li>
+            <li class="kursy"><a href="main_course_list">Kursy</a></li>
+            <li class="Konto"><a href="list_new_courses">Nowe Kursy</a></li>
+            <li class="kursy"><a>Prowadzacy</a></li>
+            <li class="Konto"><a href="/">Wyloguj</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <div class="main_asystent_done" th:text="'' + ${info}">
+
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Nowy kurs</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}" href="../../style.css" />
+    <script type="text/javascript" th:src="@{/index_vis.js}" src="../../index_vis.js" />
+  </head>
+  <body>
+    <div class="logo_top">
+    </div>
+    <div class="menu_navigator_student">
+      <nav>
+        <ul>
+          <li class="home"><a class="active" href="main_student">Strona główna</a></li>
+          <li class="kursy"><a>Kursy</a></li>
+          <li class="Konto"><a href="/">Wyloguj</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="loggedAs">
+
+    </div>
+    <div class="container">
+        <form method="post" action="course">
+          <table class="tg">
+            <tr>
+              <th class="tg-031e">
+                Kurs zamiennikowy
+              </th>
+              <th class="tg-yw4l">
+                <input type="checkbox" name="zam" class="field_log" onclick="validate()" id="check"/>
+              </th>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">
+                Nazwa kursu
+              </td>
+              <td class="tg-yw4l">
+                <select class="field_log" name="kurs">
+                  <option value=""></option>
+                  <option value="Anliza Matematyczna I">Anliza Matematyczna I</option>
+                  <option value="Anliza Matematyczna II">Anliza Matematyczna II</option>
+                  <option value="Fizyka">Fizyka</option>
+                  <option value="Matematyka">Matematyka</option>
+                  <option value="Podstawy programowania">Podstawy programowania</option>
+                </select>
+              </td>
+              <td>
+                <select class="field_log" name="kurs_zamiennikowy" id="input_kurs_zam" style="visibility:hidden">
+                  <option value=""></option>
+                  <option value="Anliza Matematyczna I">Anliza Matematyczna I</option>
+                  <option value="Anliza Matematyczna II">Anliza Matematyczna II</option>
+                  <option value="Fizyka">Fizyka</option>
+                  <option value="Matematyka">Matematyka</option>
+                  <option value="Podstawy programowania">Podstawy programowania</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">
+                Typ kursy
+              </td>
+              <td class="tg-yw4l">
+                <select class="field_log" name="typ">
+                  <option value="Wyklad">Wykład</option>
+                  <option value="Cwiczenia">Ćwiczenia</option>
+                  <option value="Laboratorium">Laboratorium</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+            <input type="submit" name="" value="Utwórz kurs" id="button_submit"/>
+        </form>
+        <div class="error" th:text="${error!=null?error:''}">
+
+        </div>
+      </div>
+  </body>
+</html>

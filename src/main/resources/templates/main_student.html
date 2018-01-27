@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Strona główna</title>
+
+
+    <link rel="stylesheet" th:href="@{/style.css}" href="../../style.css" />
+  </head>
+  <body>
+
+    <div class="logo_top">
+    </div>
+    <div class="loggedAs">
+
+    </div>
+    <div class="menu_navigator_student">
+      <nav>
+        <ul>
+          <li class="home"><a class="active" href="main_student">Strona główna</a></li>
+          <li class="kursy"><a>Kursy</a></li>
+          <li class="Konto"><a href="/">Wyloguj</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="main_student_done" th:text="'' + ${info}">
+
+      </div>
+
+      <form method="post" action="newCourse">
+          <input type="submit" value="Utwórz nowy kurs" id="button_submit"/>
+      </form>
+    </div>
+
+  </body>
+</html>

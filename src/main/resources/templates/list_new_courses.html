@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Strona główna</title>
+
+
+    <link rel="stylesheet" th:href="@{/style.css}" href="../../style.css" />
+</head>
+<body>
+
+<div class="logo_top">
+</div>
+<div class="loggedAs">
+
+</div>
+<div class="menu_navigator_student">
+    <nav>
+        <ul>
+            <li class="home"><a href="main_asystent">Strona główna</a></li>
+            <li class="kursy"><a href="main_course_list">Kursy</a></li>
+            <li class="Konto"><a class="active" href="list_new_courses">Nowe Kursy</a></li>
+            <li class="kursy"><a>Prowadzacy</a></li>
+            <li class="Konto"><a href="/">Wyloguj</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+
+
+
+        <table class="blueTable">
+            <thead>
+            <tr>
+                <th>Nazwa kursu</th>
+                <th>Liczba osób</th>
+                <th>Typ</th>
+                <th>Szczegóły</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr th:each="kurs: ${courses}">
+                <td th:text="${kurs.getNazwaKursu()}" />
+                <td th:text="${kurs.getIloscOsob()}" />
+                <td th:text="${kurs.getTyp()}" />
+                <td>
+                    <form method="post" action="asystent_course_info">
+                        <input type="submit" name="szczegoly" value="szczegoly" id="button_submit" th:field="*{kurs.getId()}"/>
+                        <input type="hidden" th:value="${kurs.getId()}" name="kursid"/>
+                    </form>
+                </td>
+                <br/>
+            </tr>
+            </tbody>
+        </table>
+
+</div>
+
+</body>
+</html>

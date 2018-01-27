@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>poprawTo - strona główna</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}" href="../../style.css" />
+</head>
+<body>
+<div class="logo_top">
+</div>
+<div class="menu_navigator_student">
+    <nav>
+        <ul>
+            <li class="home"><a class="active" href="main_asystent">Strona główna</a></li>
+            <li class="kursy"><a href="main_course_list">Kursy</a></li>
+            <li class="Konto"><a href="list_new_courses">Nowe Kursy</a></li>
+            <li class="kursy"><a>Prowadzacy</a></li>
+            <li class="Konto"><a href="/">Wyloguj</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="loggedAs">
+
+</div>
+
+
+<div id="login_container_course">
+
+    <div class="course_navigator">
+        <ul id="course_ul">
+            <li class="Konto"><a href="course_asystent">Kurs</a></li>
+            <li class="active"><a href="course_asystent_lista">Lista osób</a></li>
+            <li class="Konto"><a href="course_asystent_prowadzacy">Prowadzący</a></li>
+        </ul>
+    </div>
+    <div class="summary_course">
+        <strong>
+            <tr th:each="student: ${students}">
+                <td th:text="${student.getImie()}" />
+                <td th:text="${student.getNazwisko()}" />
+                <td th:text="${student.getIndeks()}" />
+                <br/>
+            </tr>
+        </strong>
+
+    </div>
+
+</div>
+</body>
+</html>
