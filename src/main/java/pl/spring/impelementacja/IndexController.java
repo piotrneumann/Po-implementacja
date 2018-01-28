@@ -27,6 +27,8 @@ public class IndexController {
     AsystentDziekanaRepository repoAsystent;
     @Autowired
     ProwadzacyRepository repoProwadzacy;
+    @Autowired
+    CourseReplaceRepository repoReplace;
 
     @GetMapping("/")
     public String login(Model model) {
