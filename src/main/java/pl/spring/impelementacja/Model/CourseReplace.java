@@ -3,7 +3,7 @@ package pl.spring.impelementacja.Model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "kurs")
+@Table(name = "kurs zamiennikowy")
 public class CourseReplace {
 
     @Id
